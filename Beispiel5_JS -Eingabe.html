@@ -1,0 +1,50 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Javascript Beispiel 1</title>
+	 <meta charset="UTF-8"><!--Umlaute richtig dargestellt-->
+	 <script src="./jquery.js"></script><!-- JQUERY ermöglicht kürzere Befehle, Zugriff auf "Kurze Schreibweisen"-->
+	 <style>
+		input{
+			background-color:plum;
+			border-radius:4pt;
+			width:auto;
+			font-size:24pt;
+		}
+		#chat1,#chat2{
+			margin:10pt;
+		}
+		p{
+			background-color:steelblue;
+		}
+	 </style>
+</head> 
+<body>
+					<!--Notiz im HTML-Code, hier fängt das sichtbare Dokument an! -->
+	<div style="display:grid;grid-template-columns:50% 50%;"> 
+		<div id="chat1"> 
+		<input id="input1"> </input> 
+		</div>
+			<div id="chat2"> 
+			<input id="input2"> </input>
+			</div>
+	<!-- SCRIPT   -->
+	<script>		
+		$("#input1").keyup(function(	e ){ 						
+			if(e.key=="Enter"){  		
+				var val=$(this).val(); 
+				$("#chat1").append("<p>" + val + "</p>");		
+				$(this).val(""); 
+			}
+		});
+		$("#input2").keyup(function(	e ){ 						
+			if(e.key=="Enter"){  		
+				var val=$(this).val(); 
+				$("#chat2").append("<p>" + val + "</p>");		
+				$(this).val(""); 
+				}
+		});
+	</script>
+</body>
+</html>
